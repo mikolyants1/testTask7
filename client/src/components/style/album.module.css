@@ -1,0 +1,30 @@
+
+.album {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.item {
+    position: relative;
+}
+.like{
+    text-align: center;
+    color: gold;
+    background-color: rgb(240,240,240 );
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+.dis {
+    position: absolute;
+    background-color: rgb(240,240,240 );
+    right: 0;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+}
