@@ -12,9 +12,8 @@ interface props {
 };
 
 function AlbumCard({id}:props):JSX.Element {
- const {data,isError,isLoading} = useQuery({
- queryKey:['albums'],queryFn:()=>getAlbum(id)
- });
+ const {data,isError,isLoading} = useQuery<IAlbums[]>({
+ queryKey:['albums'],queryFn:()=>getAlbum(id)});
       
   if (isLoading) return <Loader />;
   if (isError) return <Error />;

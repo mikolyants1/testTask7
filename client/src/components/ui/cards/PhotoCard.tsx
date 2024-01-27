@@ -11,9 +11,8 @@ interface props {
     id:string
 }
 function PhotoCard({id}:props):JSX.Element {
- const {data,isError,isLoading} = useQuery({
-  queryKey:['photos'],queryFn:()=>getPhotos(id)
- });
+ const {data,isError,isLoading} = useQuery<IPhotos[]>({
+  queryKey:['photos'],queryFn:()=>getPhotos(id)});
 
   if (isLoading) return <Loader />;
   if (isError) return <Error />;

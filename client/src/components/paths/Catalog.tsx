@@ -10,7 +10,7 @@ import { useOutletContext } from 'react-router-dom';
 
 function Catalog():JSX.Element {
   const {setOpen,setUrl} = useOutletContext<context>();
-  const {data,isError,isLoading} = useQuery({
+  const {data,isError,isLoading} = useQuery<IUsers[]>({
   queryKey:['users'],queryFn:getUsers});
 
   if (isLoading) return <Loader />;
