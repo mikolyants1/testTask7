@@ -10,13 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@apollo/client": "^3.9.5",
     "@reduxjs/toolkit": "^2.1.0",
-    "@tanstack/react-query": "^5.17.19",
     "@types/react-modal": "^3.16.3",
     "@types/react-redux": "^7.1.33",
     "@types/react-router-dom": "^5.3.3",
     "@types/redux-persist": "^4.3.1",
-    "axios": "^1.6.6",
     "framer-motion": "^11.0.3",
     "motion": "^10.17.0",
     "react": "^18.2.0",

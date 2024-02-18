@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { Generate, IAlbums, IPhotos, IUsers } from "../types.js";
+import { Generate, IAlbums, IPhotos, IUsers } from "../types/types.js";
 
 class Generator implements Generate {
     generateUsers(numUsers:number):IUsers[]{
@@ -12,17 +12,17 @@ class Generator implements Generate {
     };
       
     generateAlbums(numAlbums:number,users:IUsers[]):IAlbums[]{
-        return users.flatMap((user:IUsers) =>
-          [...Array(numAlbums)].map(() => ({
-            albumId: faker.string.uuid(),
-            userId: user.id,
-            title: faker.lorem.sentence(),
+      return users.flatMap((user:IUsers) =>
+        [...Array(numAlbums)].map(() => ({
+          albumId: faker.string.uuid(),
+          userId: user.id,
+          title: faker.lorem.sentence(),
         })));
     };
       
       
     generatePhotos(numPhotos:number,albums:IAlbums[]):IPhotos[]{
-        return albums.flatMap((album:IAlbums) =>
+      return albums.flatMap((album:IAlbums) =>
           [...Array(numPhotos)].map(() => ({
             albumId: album.albumId,
             id: faker.string.uuid(),

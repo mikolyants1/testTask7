@@ -1,9 +1,12 @@
-import axios, { AxiosResponse } from 'axios'
-import { IAlbums } from '../../types/types'
+import { DocumentNode, gql } from '@apollo/client';
 
-async function getAlbum(id:string):Promise<IAlbums[]> {
- return await axios.get(`http://localhost:3000/albums/${id}`)
- .then(({data}:AxiosResponse<IAlbums[]>)=>data);
-};
+const ALBUMS:DocumentNode = gql`
+     query getAlbums($id:String!){
+      albums(id:$id){
+        albumId,
+        userId,
+        title
+      }
+    }`
 
-export default getAlbum
+export default ALBUMS

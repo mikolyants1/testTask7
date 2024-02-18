@@ -1,6 +1,6 @@
 import Generator from "./Classes/Generator.js";
 import fs from "fs";
-import { IAlbums, IPhotos, IUsers } from "./types.js";
+import { IAlbums, IPhotos, IUsers } from "./types/types.js";
 
 const gen:Generator = new Generator();
 

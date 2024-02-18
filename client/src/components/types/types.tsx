@@ -21,6 +21,14 @@ export interface IUsers {
     email:string
 }
 
+export interface IQuery  {
+    users:IUsers[],
+    albums:IAlbums[],
+    photos:IPhotos[]
+} 
+
+export type Gql<T extends keyof IQuery> = Pick<IQuery,T>;
+
 export interface IPhotos {
     albumId:string,
     id:string,
@@ -29,8 +37,8 @@ export interface IPhotos {
 }
 
 export interface IAlbums {
-    albumId: string,
-    userId: string,
+    albumId:string,
+    userId:string,
     title:string
 }
 

@@ -1,9 +1,14 @@
-import axios, { AxiosResponse } from 'axios'
-import { IPhotos } from '../../types/types'
 
-async function getPhotos(id:string):Promise<IPhotos[]> {
- return await axios.get(`http://localhost:3000/photos/${id}`)
- .then(({data}:AxiosResponse<IPhotos[]>)=>data);
-};
+import { DocumentNode, gql } from '@apollo/client';
 
-export default getPhotos
+const PHOTOS:DocumentNode = gql`
+   query getPhotos($id:String!){
+     photos(id:$id){
+      albumId,
+      id,
+      title,
+      url
+     }
+    } `
+
+export default PHOTOS
